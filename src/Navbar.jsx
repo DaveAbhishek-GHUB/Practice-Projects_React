@@ -15,7 +15,7 @@ function Navbar() {
         </div>
         <div className="nav-links flex gap-10">
           <Link to="/">Home</Link>
-          <div className="Dropdown relative">
+          <div className="Dropdown relative z-10">
             <button onClick={() => setIsOpen(!isOpen)}>Other Projects</button>
             {isOpen && (
               <div className="absolute right-0 mt-2 bg-white border border-gray-200">
@@ -24,6 +24,12 @@ function Navbar() {
                 </Link>
                 <Link to="/searchbar" className="block px-4 py-2">
                   Searchbar
+                </Link>
+                <Link to="/datatablecomponent" className="block px-4 py-2">
+                  Data Table Component
+                </Link>
+                <Link to="/searchthemovie" className="block px-4 py-2">
+                  Search the movie
                 </Link>
               </div>
             )}

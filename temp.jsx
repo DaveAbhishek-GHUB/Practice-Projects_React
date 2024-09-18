@@ -1,35 +1,65 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+/* eslint-disable no-unused-vars */
+import React, { useEffect, useState } from 'react'
+import Navbar from './Navbar'
+import DataTable from 'react-data-table-component';
 
-const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false);
+function Searchthemovie() {
+    const [input, setInput] = useState('');
+    const [data, setData] = useState([]);
 
-  return (
-    <div className="navbar flex items-center justify-between px-10 border-b-2">
-      <div className="logo">
-        <Link to="/">
-          <img className='w-[5vw]' src={Logo} alt="" />
-        </Link>
-      </div>
-      <div className="nav-links flex gap-10">
-        <Link to="/">Home</Link>
-        <Link to="/Login">Login</Link>
-        <Link to="/Register">Register</Link>
-        <div className="relative">
-          <button onClick={() => setIsOpen(!isOpen)}>
-            More ▼
-          </button>
-          {isOpen && (
-            <div className="absolute right-0 mt-2 bg-white border border-gray-200">
-              <Link to="/about" className="block px-4 py-2">About</Link>
-              <Link to="/contact" className="block px-4 py-2">Contact</Link>
-              <Link to="/faq" className="block px-4 py-2">FAQ</Link>
+    const fetchData = (value) => {
+        fetch("https://mocki.io/v1/6f99a411-fbcd-421e-9054-16d79c452ad6")
+        .then(response => response.json())
+        .then((json) => {
+            const res = json.filter((movie) => {
+                return value && movie.movie_name && movie.movie_name.toLowerCase().includes(value.toLowerCase());
+            });
+            setData(res);
+        });
+    }
+
+    const columns = [
+        {
+            name: "Movie_name",
+            selector: row => row.movie_name,
+        },
+        {
+            name: "Release_date",
+            selector: row => row.release_date,
+        },
+        {
+            name: "IMDB rating",
+            selector: row => row.imdb_rating,
+        }
+    ]
+
+    const handleChange = (value) => {
+        setInput(value);
+        fetchData(value);
+    }
+
+    useEffect(() => {
+        fetchData('');
+    }, []);
+
+    return (
+        <>
+            <Navbar/>
+            <div className="main-container w-full h-screen">
+                <div className="search-wrapper mt-[10vw] w-full h-[10vw] flex justify-center items-center">
+                    <input 
+                        className='border-2 w-1/2 p-2 rounded-xl' 
+                        type="text" 
+                        value={input} 
+                        onChange={(e) => handleChange(e.target.value)}
+                    />
+                </div>
+                <div className="show-result w-full">
+                    <DataTable columns={columns} data={data}/>
+                </div>
             </div>
-          )}
-        </div>
-      </div>
-    </div>
-  );
-};
+        </>
+    )
+}
 
-export default Navbar;
+export default Searchthemovie

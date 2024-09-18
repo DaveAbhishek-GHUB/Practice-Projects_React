@@ -12,12 +12,11 @@ function Searchbar() {
         await fetch("https://mocki.io/v1/909651d3-d2ec-4ab5-86a6-272ea536bce5")
         .then((Response) => Response.json())
         .then((json)=> {
-            // console.log(json);
             const res = json.filter((user)=>{
                 return value && user && user.name && user.name.toLowerCase().includes(value);
             });
             // console.log(results);
-            setResults(res)
+            setResults()
         }); 
     }
 

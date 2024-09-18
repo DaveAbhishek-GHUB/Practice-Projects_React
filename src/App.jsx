@@ -10,6 +10,9 @@ import Profile from './Profile'
 import Todo from './Todolist'
 import NotFound from './NotFound'
 import Searchbar from './Searchbar'
+import Datatablecomponent from './Datatablecomponent'
+import Searchthemovie from './Searchthemovie'
+import Searchwebseries from './Searchwebseries'
 
 function App() {
 
@@ -22,6 +25,9 @@ function App() {
       <Route path='/profile' element={<Profile/>}></Route>
       <Route path='/todo' element={<Todo/>}></Route>
       <Route path='/searchbar' element={<Searchbar/>}></Route>
+      <Route path='datatablecomponent' element={<Datatablecomponent/>}></Route>searchthemovie
+      <Route path='searchthemovie' element={<Searchthemovie/>}></Route>
+      <Route path='searchwebseries' element={<Searchwebseries/>}></Route>
       <Route path='*' element={<NotFound/>}></Route>
     </Routes>
     </>
