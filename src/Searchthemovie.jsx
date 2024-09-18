@@ -30,7 +30,8 @@ function Searchthemovie() {
         },
         {
             name: "IMDB rating",
-            selector: row=> row.imdb_rating
+            selector: row=> row.imdb_rating,
+            sortable: true
         }
     ]
 
@@ -62,5 +63,3 @@ function Searchthemovie() {
 }
 
 export default Searchthemovie
-
-// https://mocki.io/v1/6f99a411-fbcd-421e-9054-16d79c452ad6

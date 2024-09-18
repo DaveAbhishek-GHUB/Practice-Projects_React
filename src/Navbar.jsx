@@ -18,18 +18,21 @@ function Navbar() {
           <div className="Dropdown relative z-10">
             <button onClick={() => setIsOpen(!isOpen)}>Other Projects</button>
             {isOpen && (
-              <div className="absolute right-0 mt-2 bg-white border border-gray-200">
-                <Link to="/todo" className="block px-4 py-2">
+              <div className="absolute right-[-5vw] mt-2 bg-white border border-gray-200 w-[20vw]">
+                <Link to="/todo" className="block px-4 py-2 text-[1vw]">
                   Todo List
                 </Link>
-                <Link to="/searchbar" className="block px-4 py-2">
+                <Link to="/searchbar" className="block px-4 py-2 text-[1vw]">
                   Searchbar
                 </Link>
-                <Link to="/datatablecomponent" className="block px-4 py-2">
+                <Link to="/datatablecomponent" className="block px-4 py-2 text-[1vw]">
                   Data Table Component
                 </Link>
-                <Link to="/searchthemovie" className="block px-4 py-2">
-                  Search the movie
+                <Link to="/searchthemovie" className="block px-4 py-2 text-[1vw]">
+                  Search Movie
+                </Link>
+                <Link to="/searchwebseries" className="block px-4 py-2 text-[1vw]">
+                  Search Webseries
                 </Link>
               </div>
             )}
