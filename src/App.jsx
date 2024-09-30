@@ -8,11 +8,11 @@ import NotFound from './components/NotFound'
 import Datatablecomponent from './components/Datatablecomponent'
 import Searchwebseries from './components/Searchwebseries'
 import Datatablecomponentwithfilter from './components/Datatablecomponentwithfilter'
-import { Collection } from 'mongoose'
 import CartPage from './components/CartPage'
 import FashinoLogin from './components/FashinoLogin'
 import FashinoRegister from './components/Register'
 import HomePage from './components/HomePage'
+import Collections from './components/Collections'
 
 function App() {
 
@@ -28,7 +28,7 @@ function App() {
       <Route path='/datatablecomponentwithFilter' element={<Datatablecomponentwithfilter/>}></Route>
       <Route path='/searchwebseries' element={<Searchwebseries/>}></Route>
       <Route path='/ecommerce' element={<HomePage/>}></Route>
-      <Route path="/collections" element={<Collection />} />
+      <Route path="/collections" element={<Collections />} />
         <Route path="/fashinocart" element={<CartPage />} />
         <Route path="/fashinologin" element={<FashinoLogin />} />
         <Route path="/fashinoregister" element={<FashinoRegister />} />

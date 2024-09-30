@@ -1,6 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
 import Navbar from "./Navbar";
+import { Link } from "react-router-dom";
 
 //images
 import Product_01 from "../../public/Products/Product_01/img_03.webp";
@@ -8,15 +9,17 @@ import Product_02 from "../../public/Products/Product_02/img_01.webp";
 import Product_03 from "../../public/Products/Product_03/img_01.webp";
 import bransilia_collection from "../../public/Products/Product_01/img_02.webp";
 import Fashino_Residence from "../../public/Images/Recidence.jpg";
+import FashinoFooter from "./FashinoFooter";
+
 
 //css
 import "../../public/css/myFont.css";
-import FashinoNavbar from "./FashinoNavbar";
+
 
 function HomePage() {
   return (
     <>
-      <FashinoNavbar />
+      <Navbar />
       <div className="main-container w-full h-[85vh] relative">
         <div className="video-wrapper w-full h-full">
           <video
@@ -26,9 +29,11 @@ function HomePage() {
             loop
             muted
           ></video>
+          <Link to='/collections'>
           <button className="absolute bg-white text-gray-700 bottom-[15%] left-[5%] p-5 border-none rounded-2xl">
             Explore our collections
           </button>
+          </Link>
         </div>
 
         <div className="Explore-ourNews w-[100vw] h-[100vh] mt-3">
@@ -72,9 +77,11 @@ function HomePage() {
           </div>
         </div>
         <div className="view-all-btn w-full flex justify-center py-3 mt-10">
-          <button className="uppercase bg-[#C2AA8B] text-white px-10 py-2 rounded-lg">
+        <Link to='/collections'>
+        <button className="uppercase bg-[#C2AA8B] text-white px-10 py-2 rounded-lg">
             view all
           </button>
+        </Link>
         </div>
         <div className="brasilia-collection w-[90%] h-screen flex">
           <div className="image w-[50%] h-full p-[5vw]">
@@ -129,6 +136,7 @@ function HomePage() {
             </span>
           </div>
         </div>
+      <FashinoFooter/>
       </div>
     </>
   );
