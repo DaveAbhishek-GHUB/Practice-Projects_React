@@ -11,11 +11,12 @@ import Fashino_Residence from "../../public/Images/Recidence.jpg";
 
 //css
 import "../../public/css/myFont.css";
+import FashinoNavbar from "./FashinoNavbar";
 
 function HomePage() {
   return (
     <>
-      <Navbar />
+      <FashinoNavbar />
       <div className="main-container w-full h-[85vh] relative">
         <div className="video-wrapper w-full h-full">
           <video
