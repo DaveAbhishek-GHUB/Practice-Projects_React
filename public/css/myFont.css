@@ -1,0 +1,8 @@
+@font-face {
+    font-family: centuryOld;
+    src: url('../fonts/font_centuryoldstylestd-regular.woff2');
+}
+
+.myFonts{
+    font-family: centuryOld;
+}
