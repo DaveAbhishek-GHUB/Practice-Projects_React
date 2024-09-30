@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { jwtDecode } from "jwt-decode";
 
-function Login() {
+function FashinoProfile() {
   const userData = useSelector((state) => state.cart.GoogleRegisterData);
   console.log("from Login page", userData);
 
@@ -81,4 +81,4 @@ function Login() {
   );
 }
 
-export default Login;
+export default FashinoProfile;
