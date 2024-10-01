@@ -31,11 +31,17 @@ function WeatherApp() {
       .catch((error) => {
         console.log("Data Fetch Error:", error);
         setError(error.message);
+        if(location == ""){
+          setLocation("Ahmedabad")
+        }
       });
   };
 
   const handlechange = (e) => {
     setLocation(e.target.value);
+    if(location == ''){
+      setLocation("ahmedabad");
+    }
   };
 
   useEffect(() => {
@@ -70,14 +76,6 @@ function WeatherApp() {
             {icon && <img className="h-[22vw]" src={icon} alt="Weather icon" />}
           </div>
           <div className="weather-info w-1/2 h-full flex flex-col justify-center gap-10">
-            {location == "" ? (
-              <>
-                <div className="w-full flex justify-center items-center">
-                  <p>Enter a Location</p>
-                </div>
-              </>
-            ) : (
-              <>
                 {error ? (
                   <div className="error-message text-red-500 text-center text-[2vw]">
                     {error}
@@ -92,7 +90,7 @@ function WeatherApp() {
                         <sup>°</sup>C
                       </span>
                       <span className="text-[3vw]">
-                        {weatherData.name || "Unknown Location"}
+                        {weatherData.name || "Location not found"}
                       </span>
                     </div>
                     <div className="w-full flex justify-center gap-10">
@@ -134,8 +132,6 @@ function WeatherApp() {
                     Loading...
                   </div>
                 )}
-              </>
-            )}
 
             <div className="search-bar w-full flex justify-center items-center mt-5">
               <input
