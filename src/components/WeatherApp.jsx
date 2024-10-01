@@ -19,11 +19,11 @@ function WeatherApp() {
         },
         (error) => {
           console.error("Error getting location:", error);
-          fetchWeatherByCity("Ahmedabad"); // Default city if geolocation fails
+          fetchWeatherByCity("Ahmedabad"); 
         }
       );
     } else {
-      fetchWeatherByCity("Ahmedabad"); // Default city if geolocation is not supported
+      fetchWeatherByCity("Ahmedabad");
     }
   }, []);
 
