@@ -1,12 +1,14 @@
 /* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from "react";
 import Navbar from "./Navbar";
+import WeatherLoader from "./WeatherLoader";
 
 function WeatherApp() {
   const [location, setLocation] = useState("ahmedabad");
   const [weatherData, setWeatherData] = useState(null);
   const [icon, setIcon] = useState("");
   const [error, setError] = useState(null);
+  const [search, setSearch] = useState(true);
 
   const fetchedData = () => {
     setError(null);
@@ -18,6 +20,8 @@ function WeatherApp() {
     )
       .then((response) => {
         if (!response.ok) {
+          setLocation("ahmedabad");
+          setSearch(false);
           throw new Error("Location not found");
         }
         return response.json();
@@ -27,6 +31,7 @@ function WeatherApp() {
         if (data.weather && data.weather[0] && data.weather[0].icon) {
           getWeatherIcon(data.weather[0].icon);
         }
+        setSearch(true);
       })
       .catch((error) => {
         console.log("Data Fetch Error:", error);
@@ -43,7 +48,7 @@ function WeatherApp() {
         const { latitude, longitude } = position.coords;
         fetchWeatherByCoords(latitude, longitude);
       });
-    };
+    }
   });
 
   const fetchWeatherByCoords = (lat, lon) => {
@@ -70,7 +75,10 @@ function WeatherApp() {
   };
 
   useEffect(() => {
-    fetchedData();
+    const timer = setTimeout(() => {
+      fetchedData();
+    }, 800);
+    return () => clearTimeout(timer);
   }, [location]);
 
   const condition = {
@@ -92,6 +100,7 @@ function WeatherApp() {
     setIcon(condition[iconCode] || "");
   };
 
+
   return (
     <>
       <Navbar />
@@ -102,9 +111,7 @@ function WeatherApp() {
           </div>
           <div className="weather-info w-1/2 h-full flex flex-col justify-center gap-10">
             {error ? (
-              <div className="error-message text-red-500 text-center text-[2vw]">
-                {error}
-              </div>
+              <WeatherLoader/>
             ) : weatherData ? (
               <>
                 <div className="temp-wrapper flex flex-col justify-center items-center">
@@ -153,10 +160,11 @@ function WeatherApp() {
                 </div>
               </>
             ) : (
-              <div className="loading text-center text-[2vw]">Loading...</div>
+              <WeatherLoader/>
             )}
 
-            <div className="search-bar w-full flex justify-center items-center mt-5">
+            {search == true && (
+              <div className="search-bar w-full flex justify-center items-center mt-5">
               <input
                 className="w-[60%] p-3 rounded-2xl text-[1vw]"
                 onChange={handlechange}
@@ -164,6 +172,7 @@ function WeatherApp() {
                 placeholder="Enter location"
               />
             </div>
+            )}
           </div>
         </div>
       </div>
