@@ -5,171 +5,311 @@ import Navbar from "./Navbar";
 import ReactPaginate from "react-paginate";
 
 const Datatablecomponentwithfilter = () => {
-  const columns = [
-    {
-      name: "username",
-      selector: (row) => row.username,
-    },
-    {
-      name: "email",
-      selector: (row) => row.email,
-    },
-    {
-      name: "password",
-      selector: (row) => row.password,
-    },
-    {
-      name: "age",
-      selector: (row) => row.age,
-    },
-  ];
-
-  const data = [
-    {
-      id: 1,
-      username: "John Wick",
-      email: "johnwick@gmail.com",
-      password: "boogeyman123",
-      age: 35,
-    },
-    {
-      id: 2,
-      username: "John Snow",
-      email: "johnsnow@gmail.com",
-      password: "winteriscoming",
-      age: 25,
-    },
-    {
-      id: 3,
-      username: "jemmylenister",
-      email: "jemmylenister@gmail.com",
-      password: "hearmeRoar",
-      age: 40,
-    },
-    {
-      id: 4,
-      username: "Arya Stark",
-      email: "aryastark@gmail.com",
-      password: "valarMorghulis",
-      age: 18,
-    },
-    {
-      id: 5,
-      username: "Daenerys Targaryen",
-      email: "motherofdragons@gmail.com",
-      password: "dracarys",
-      age: 22,
-    },
-    {
-      id: 6,
-      username: "Tyrion Lannister",
-      email: "tyrionlannister@gmail.com",
-      password: "iDrinkAndIKnowThings",
-      age: 38,
-    },
-    {
-      id: 7,
-      username: "Sherlock Holmes",
-      email: "sherlockholmes@gmail.com",
-      password: "elementaryMyDearWatson",
-      age: 40,
-    },
-    {
-      id: 8,
-      username: "Tony Stark",
-      email: "ironman@stark.com",
-      password: "iAmIronMan3000",
-      age: 45,
-    },
-    {
-      id: 9,
-      username: "Bruce Wayne",
-      email: "batman@wayneenterprises.com",
-      password: "iAmBatman",
-      age: 40,
-    },
-    {
-      id: 10,
-      username: "Peter Parker",
-      email: "spiderman@dailybugle.com",
-      password: "withGreatPower",
-      age: 23,
-    },
-    {
-      id: 11,
-      username: "Hermione Granger",
-      email: "hermione@hogwarts.edu",
-      password: "wingardiumLeviosa",
-      age: 20,
-    },
-    {
-      id: 12,
-      username: "Luke Skywalker",
-      email: "luke@jediorder.com",
-      password: "useTheForce",
-      age: 30,
-    },
-    {
-      id: 13,
-      username: "Leia Organa",
-      email: "leia@resistance.org",
-      password: "rebelPrincess",
-      age: 30,
-    },
-    {
-      id: 14,
-      username: "Katniss Everdeen",
-      email: "mockingjay@district12.com",
-      password: "mayTheOddsBeEverInYourFavor",
-      age: 17,
-    },
-    {
-      id: 15,
-      username: "Harry Potter",
-      email: "chosen_one@hogwarts.edu",
-      password: "expelliarmus",
-      age: 18,
-    },
-    {
-      id: 16,
-      username: "Frodo Baggins",
-      email: "ringbearer@shire.me",
-      password: "preciousRing",
-      age: 33,
-    },
-    {
-      id: 17,
-      username: "Ellen Ripley",
-      email: "alienslayer@weyland.com",
-      password: "getAwayFromHer",
-      age: 30,
-    },
-    {
-      id: 18,
-      username: "James Bond",
-      email: "007@mi6.gov.uk",
-      password: "shakenNotStirred",
-      age: 42,
-    },
-    {
-      id: 19,
-      username: "Wonder Woman",
-      email: "diana@themyscira.com",
-      password: "lassoOfTruth",
-      age: 800,
-    },
-    {
-      id: 20,
-      username: "Neo",
-      email: "theone@matrix.net",
-      password: "followTheWhiteRabbit",
-      age: 28,
-    },
-  ];
+    const columns = [
+        {
+          name: "Username",
+          selector: (row) => row.username,
+        },
+        {
+          name: "Email",
+          selector: (row) => row.email,
+        },
+        {
+          name: "Age",
+          selector: (row) => row.age,
+        },
+        {
+          name: "Mobile Number",
+          selector: (row) => row["mobile number"],
+        },
+      ];
+      
+      const data = [
+        {
+          id: 1,
+          username: "John Wick",
+          email: "johnwick@gmail.com",
+          age: "boogeyman123",
+          "mobile number": "35XXXXXXXX",
+        },
+        {
+          id: 2,
+          username: "John Snow",
+          email: "johnsnow@gmail.com",
+          age: "winteriscoming",
+          "mobile number": "25XXXXXXXX",
+        },
+        {
+          id: 3,
+          username: "jemmylenister",
+          email: "jemmylenister@gmail.com",
+          age: "hearmeRoar",
+          "mobile number": "40XXXXXXXX",
+        },
+        {
+          id: 4,
+          username: "Arya Stark",
+          email: "aryastark@gmail.com",
+          age: "valarMorghulis",
+          "mobile number": "18XXXXXXXX",
+        },
+        {
+          id: 5,
+          username: "Daenerys Targaryen",
+          email: "motherofdragons@gmail.com",
+          age: "dracarys",
+          "mobile number": "22XXXXXXXX",
+        },
+        {
+          id: 6,
+          username: "Tyrion Lannister",
+          email: "tyrionlannister@gmail.com",
+          age: "iDrinkAndIKnowThings",
+          "mobile number": "38XXXXXXXX",
+        },
+        {
+          id: 7,
+          username: "Sherlock Holmes",
+          email: "sherlockholmes@gmail.com",
+          age: "elementaryMyDearWatson",
+          "mobile number": "40XXXXXXXX",
+        },
+        {
+          id: 8,
+          username: "Tony Stark",
+          email: "ironman@stark.com",
+          age: "iAmIronMan3000",
+          "mobile number": "45XXXXXXXX",
+        },
+        {
+          id: 9,
+          username: "Bruce Wayne",
+          email: "batman@wayneenterprises.com",
+          age: "iAmBatman",
+          "mobile number": "40XXXXXXXX",
+        },
+        {
+          id: 10,
+          username: "Peter Parker",
+          email: "spiderman@dailybugle.com",
+          age: "withGreatPower",
+          "mobile number": "23XXXXXXXX",
+        },
+        {
+          id: 11,
+          username: "Hermione Granger",
+          email: "hermione@hogwarts.edu",
+          age: "wingardiumLeviosa",
+          "mobile number": "20XXXXXXXX",
+        },
+        {
+          id: 12,
+          username: "Luke Skywalker",
+          email: "luke@jediorder.com",
+          age: "useTheForce",
+          "mobile number": "30XXXXXXXX",
+        },
+        {
+          id: 13,
+          username: "Leia Organa",
+          email: "leia@resistance.org",
+          age: "rebelPrincess",
+          "mobile number": "30XXXXXXXX",
+        },
+        {
+          id: 14,
+          username: "Katniss Everdeen",
+          email: "mockingjay@district12.com",
+          age: "mayTheOddsBeEverInYourFavor",
+          "mobile number": "17XXXXXXXX",
+        },
+        {
+          id: 15,
+          username: "Harry Potter",
+          email: "chosen_one@hogwarts.edu",
+          age: "expelliarmus",
+          "mobile number": "18XXXXXXXX",
+        },
+        {
+          id: 16,
+          username: "Frodo Baggins",
+          email: "ringbearer@shire.me",
+          age: "preciousRing",
+          "mobile number": "33XXXXXXXX",
+        },
+        {
+          id: 17,
+          username: "Ellen Ripley",
+          email: "alienslayer@weyland.com",
+          age: "getAwayFromHer",
+          "mobile number": "30XXXXXXXX",
+        },
+        {
+          id: 18,
+          username: "James Bond",
+          email: "007@mi6.gov.uk",
+          age: "shakenNotStirred",
+          "mobile number": "42XXXXXXXX",
+        },
+        {
+          id: 19,
+          username: "Wonder Woman",
+          email: "diana@themyscira.com",
+          age: "lassoOfTruth",
+          "mobile number": "80XXXXXXXX",
+        },
+        {
+          id: 20,
+          username: "Neo",
+          email: "theone@matrix.net",
+          age: "followTheWhiteRabbit",
+          "mobile number": "28XXXXXXXX",
+        },
+        {
+            id: 21,
+            username: "Captain America",
+            email: "cap@avengers.com",
+            age: "iCanDoThisAllDay",
+            "mobile number": "45XXXXXXXX",
+          },
+          {
+            id: 22,
+            username: "Thor Odinson",
+            email: "thor@asgardian.com",
+            age: "worthyAvenger",
+            "mobile number": "50XXXXXXXX",
+          },
+          {
+            id: 23,
+            username: "Clark Kent",
+            email: "superman@dailyplanet.com",
+            age: "manOfSteel",
+            "mobile number": "40XXXXXXXX",
+          },
+          {
+            id: 24,
+            username: "Darth Vader",
+            email: "darkside@empire.com",
+            age: "iAmYourFather",
+            "mobile number": "55XXXXXXXX",
+          },
+          {
+            id: 25,
+            username: "Indiana Jones",
+            email: "indiana@archaeology.com",
+            age: "itBelongsInAMuseum",
+            "mobile number": "38XXXXXXXX",
+          },
+          {
+            id: 26,
+            username: "Wolverine",
+            email: "logan@xmen.com",
+            age: "snikt",
+            "mobile number": "39XXXXXXXX",
+          },
+          {
+            id: 27,
+            username: "Lara Croft",
+            email: "lara@tombraider.com",
+            age: "raiderOfTombs",
+            "mobile number": "29XXXXXXXX",
+          },
+          {
+            id: 28,
+            username: "Gandalf",
+            email: "gandalf@middleearth.com",
+            age: "youShallNotPass",
+            "mobile number": "60XXXXXXXX",
+          },
+          {
+            id: 29,
+            username: "Optimus Prime",
+            email: "optimus@autobots.com",
+            age: "freedomIsTheRightOfAll",
+            "mobile number": "70XXXXXXXX",
+          },
+          {
+            id: 30,
+            username: "Black Widow",
+            email: "natasha@avengers.com",
+            age: "redInMyLedger",
+            "mobile number": "35XXXXXXXX",
+          },
+          {
+            id: 31,
+            username: "Deadpool",
+            email: "wade@mercwithamouth.com",
+            age: "chimichanga",
+            "mobile number": "33XXXXXXXX",
+          },
+          {
+            id: 32,
+            username: "Samus Aran",
+            email: "samus@galactichunter.com",
+            age: "zeroSuit",
+            "mobile number": "37XXXXXXXX",
+          },
+          {
+            id: 33,
+            username: "Doctor Strange",
+            email: "strange@sorcerersupreme.com",
+            age: "masterOfTheMysticArts",
+            "mobile number": "44XXXXXXXX",
+          },
+          {
+            id: 34,
+            username: "Yoda",
+            email: "yoda@jediorder.com",
+            age: "doOrDoNot",
+            "mobile number": "90XXXXXXXX",
+          },
+          {
+            id: 35,
+            username: "Jack Sparrow",
+            email: "captainjack@blackpearl.com",
+            age: "whyIsTheRumGone",
+            "mobile number": "34XXXXXXXX",
+          },
+          {
+            id: 36,
+            username: "Buzz Lightyear",
+            email: "buzz@starcommand.com",
+            age: "toInfinityAndBeyond",
+            "mobile number": "22XXXXXXXX",
+          },
+          {
+            id: 37,
+            username: "Rick Sanchez",
+            email: "rick@dimensionc137.com",
+            age: "wubbaLubbaDubDub",
+            "mobile number": "65XXXXXXXX",
+          },
+          {
+            id: 38,
+            username: "Marty McFly",
+            email: "marty@backtothefuture.com",
+            age: "greatScott",
+            "mobile number": "30XXXXXXXX",
+          },
+          {
+            id: 39,
+            username: "John McClane",
+            email: "john@nakatomi.com",
+            age: "yippeeKiYay",
+            "mobile number": "55XXXXXXXX",
+          },
+          {
+            id: 40,
+            username: "Groot",
+            email: "groot@guardians.com",
+            age: "iAmGroot",
+            "mobile number": "80XXXXXXXX",
+          }
+      ];
 
   const [filterText, setFilterText] = useState("");
   const [resetPaginationToggle, setResetPaginationToggle] = useState(false);
-  const [itemOffset, setItemOffset] = useState(0);
+  const [currentPage, setCurrentPage] = useState(0);
   const itemsPerPage = 10;
 
   const filteredItems = data.filter(
@@ -178,21 +318,16 @@ const Datatablecomponentwithfilter = () => {
       item.username.toLowerCase().includes(filterText.toLowerCase())
   );
 
-  const endOffset = itemOffset + itemsPerPage;
-  const currentItems = filteredItems.slice(itemOffset, endOffset);
   const pageCount = Math.ceil(filteredItems.length / itemsPerPage);
+  const offset = currentPage * itemsPerPage;
+  const currentItems = filteredItems.slice(offset, offset + itemsPerPage);
 
   const handlePageClick = (event) => {
-    const newOffset = (event.selected * itemsPerPage) % filteredItems.length;
-    setItemOffset(newOffset);
+    setCurrentPage(event.selected);
   };
 
   const subHeaderComponentMemo = useMemo(() => {
-    const handleClear = () => {
-      if (filterText) {
-        setResetPaginationToggle(!resetPaginationToggle);
-        setItemOffset(0);
-      }
+    const handleclear = () => {
       setFilterText("");
     };
 
@@ -206,14 +341,14 @@ const Datatablecomponentwithfilter = () => {
           className="px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
         />
         <button
-          onClick={handleClear}
+          onClick={handleclear}
           className="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50"
         >
           Clear
         </button>
       </div>
     );
-  }, [filterText, resetPaginationToggle]);
+  }, [filterText]);
 
   return (
     <>
@@ -224,21 +359,28 @@ const Datatablecomponentwithfilter = () => {
           data={currentItems}
           subHeader
           subHeaderComponent={subHeaderComponentMemo}
+          paginationServer
+          paginationTotalRows={filteredItems.length}
+          paginationPerPage={itemsPerPage}
+          paginationComponentOptions={{
+            noRowsPerPage: true,
+          }}
+          onChangePage={setCurrentPage}
         />
         <ReactPaginate
-          breakLabel="..."
-          nextLabel="next >"
-          onPageChange={handlePageClick}
-          pageRangeDisplayed={5}
-          pageCount={pageCount}
-          previousLabel="< previous"
-          renderOnZeroPageCount={null}
-          containerClassName={"pagination flex justify-center mt-4 space-x-2"}
-          pageClassName={"px-3 py-2 bg-gray-200 text-gray-800 rounded-md hover:bg-gray-300"}
-          activeClassName={"bg-blue-500 text-white"}
-          previousClassName={"px-3 py-2 bg-gray-200 text-gray-800 rounded-md hover:bg-gray-300"}
-          nextClassName={"px-3 py-2 bg-gray-200 text-gray-800 rounded-md hover:bg-gray-300"}
-          disabledClassName={"opacity-50 cursor-not-allowed"}
+            breakLabel="..."
+            nextLabel="Next"
+            onPageChange={handlePageClick}
+            pageRangeDisplayed={5}
+            pageCount={pageCount}
+            previousLabel="Previous"
+            renderOnZeroPageCount={null}
+            containerClassName={"pagination flex justify-center mt-4 space-x-2"}
+            pageClassName={"px-3 py-2 bg-blue-500 text-white rounded-md hover:bg-gray-300"}
+            activeClassName={"bg-blue-500 text-white"}
+            previousClassName={"px-3 py-2 bg-gray-200 text-gray-800 rounded-md hover:bg-gray-300"}
+            nextClassName={"px-3 py-2 bg-gray-200 text-gray-800 rounded-md hover:bg-gray-300"}
+            disabledClassName={"opacity-50 cursor-not-allowed"}
         />
       </div>
     </>

@@ -1,0 +1,13 @@
+.Navigator{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #2463EB;
+    border-radius: 10vw;
+
+}
+
+.Navigator a {
+    padding: 1vw 1.5vw;
+    color: white;
+}

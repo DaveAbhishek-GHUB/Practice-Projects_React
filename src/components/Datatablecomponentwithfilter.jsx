@@ -3,23 +3,24 @@ import React, { useMemo, useState } from "react";
 import DataTable from "react-data-table-component";
 import Navbar from "./Navbar";
 import ReactPaginate from "react-paginate";
+import '../../public/css/DataTableNavigator.css'
 
 const Datatablecomponentwithfilter = () => {
     const columns = [
         {
-          name: "username",
+          name: "Username",
           selector: (row) => row.username,
         },
         {
-          name: "email",
+          name: "Email",
           selector: (row) => row.email,
         },
         {
-          name: "age",
+          name: "Age",
           selector: (row) => row.age,
         },
         {
-          name: "mobile number",
+          name: "Mobile number",
           selector: (row) => row["mobile number"],
         },
       ];
@@ -365,17 +366,17 @@ const Datatablecomponentwithfilter = () => {
           resetPaginationToggle={resetPaginationToggle}
         />
         <ReactPaginate
-            breakLabel = "..."
-            nextLabel = "Next"
+            breakLabel="..."
+            nextLabel="Next"
             onPageChange={handlePageClick}
             pageCount={pageCount}
             previousLabel="Previous"
-            containerClassName={"pagination flex justify-center mt-4 space-x-2"}
-            pageClassName={"px-3 py-2 bg-blue-500 text-white rounded-md hover:bg-gray-300"}
-            activeClassName={"bg-blue-500 text-white"}
-            previousClassName={"px-3 py-2 bg-gray-200 text-gray-800 rounded-md hover:bg-gray-300"}
-            nextClassName={"px-3 py-2 bg-gray-200 text-gray-800 rounded-md hover:bg-gray-300"}
-            disabledClassName={"opacity-50 cursor-not-allowed"}
+            containerClassName="pagination flex justify-center mt-4 space-x-2"
+            pageClassName="Navigator"
+            activeClassName="bg-blue-700"
+            previousClassName="px-3 py-2 bg-gray-200 text-gray-800 rounded-md hover:bg-gray-300"
+            nextClassName="px-3 py-2 bg-gray-200 text-gray-800 rounded-md hover:bg-gray-300"
+            disabledClassName="opacity-50 cursor-not-allowed"
         />
       </div>
     </>
