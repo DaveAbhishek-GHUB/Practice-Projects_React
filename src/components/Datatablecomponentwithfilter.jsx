@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import React, { useMemo, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import DataTable from "react-data-table-component";
 import Navbar from "./Navbar";
 import ReactPaginate from "react-paginate";
@@ -314,6 +314,7 @@ const Datatablecomponentwithfilter = () => {
   const [itemOffset, setItemOffset] = useState(0);
   const itemsPerPage = 10;
 
+
   const filteredItems = data.filter(
     (item) =>
       item.username &&
@@ -354,6 +355,10 @@ const Datatablecomponentwithfilter = () => {
     );
   }, [filterText, resetPaginationToggle]);
 
+  useEffect(() => {
+    setItemOffset(0)
+  }, [filterText]);
+  
   return (
     <>
       <Navbar />
