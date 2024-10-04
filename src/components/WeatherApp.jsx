@@ -1,4 +1,4 @@
-/* eslint-disable no-unused-vars */
+ /* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from "react";
 import Navbar from "./Navbar";
 import WeatherLoader from "./WeatherLoader";
@@ -19,7 +19,7 @@ function WeatherApp() {
         },
         (error) => {
           console.error("Error getting location:", error);
-          fetchWeatherByCity("Ahmedabad"); 
+          fetchWeatherByCity("Ahmedabad");
         }
       );
     } else {
@@ -115,60 +115,68 @@ function WeatherApp() {
   return (
     <>
       <Navbar />
-      <div className="main-container w-[100vw] h-[100vh] flex justify-center items-center">
-        <div className="inner-weather-wrapper w-[90%] h-[90%] bg-slate-200 rounded-2xl flex">
-          <div className="weather-icon w-1/2 h-full flex justify-center items-center">
-            {icon && <img className="h-[22vw]" src={icon} alt="Weather icon" />}
+      <div className="main-container w-full h-screen flex justify-center items-center bg-gradient-to-r from-blue-500 to-purple-600">
+        <div className="inner-weather-wrapper w-11/12 max-w-4xl h-5/6 bg-white shadow-lg rounded-3xl flex overflow-hidden">
+          <div className="weather-icon w-1/2 h-full flex justify-center items-center bg-gradient-to-b from-blue-300 to-blue-500">
+            {icon && <img className="h-48" src={icon} alt="Weather icon" />}
           </div>
-          <div className="weather-info w-1/2 h-full flex flex-col justify-center gap-10">
+          <div className="weather-info w-1/2 h-full flex flex-col justify-center gap-8 p-8">
             {isLoading ? (
               <WeatherLoader />
             ) : error ? (
-              <div className="error text-center text-red-500 text-[2vw]">{error}</div>
+              <div className="error text-center text-red-600 text-xl">{error}</div>
             ) : weatherData ? (
               <>
                 <div className="temp-wrapper flex flex-col justify-center items-center">
-                  <span className="text-[5vw]">
+                  <span className="text-6xl font-bold text-gray-800">
                     {Math.round(weatherData.main.temp)}
                     <sup>°</sup>C
                   </span>
-                  <span className="text-[3vw]">{weatherData.name}</span>
+                  <span className="text-2xl text-gray-600">{weatherData.name}</span>
                 </div>
-                <div className="w-full flex justify-center gap-10">
-                  <div className="Humidity-wrapper flex flex-col">
-                    <div className="inner-humidity-wrapper flex">
+                <div className="w-full flex justify-center gap-8">
+                  <div className="Humidity-wrapper flex flex-col items-center">
+                    <div className="inner-humidity-wrapper flex items-center">
                       <img
-                        className="w-10"
+                        className="w-8"
                         src="https://img.icons8.com/?size=100&id=sjlgpDZO1OtH&format=png&color=000000"
                         alt="Humidity icon"
                       />
-                      <span className="text-[2vw]">{weatherData.main.humidity}%</span>
+                      <span className="text-xl text-gray-700 ml-2">{weatherData.main.humidity}%</span>
                     </div>
-                    <div className="heading text-[1.5vw]">Humidity</div>
+                    <div className="heading text-lg text-gray-500">Humidity</div>
                   </div>
-                  <div className="Humidity-wrapper flex flex-col">
-                    <div className="inner-humidity-wrapper flex">
+                  <div className="Humidity-wrapper flex flex-col items-center">
+                    <div className="inner-humidity-wrapper flex items-center">
                       <img
-                        className="w-10"
+                        className="w-8"
                         src="https://img.icons8.com/?size=100&id=74197&format=png&color=000000"
                         alt="Wind speed icon"
                       />
-                      <span className="text-[2vw]">{weatherData.wind.speed}km/h</span>
+                      <span className="text-xl text-gray-700 ml-2">{weatherData.wind.speed} km/h</span>
                     </div>
-                    <div className="heading text-[1.5vw]">Wind Speed</div>
+                    <div className="heading text-lg text-gray-500">Wind Speed</div>
                   </div>
                 </div>
               </>
             ) : null}
-            <form onSubmit={handleSubmit} className="search-bar w-full flex justify-center items-center mt-5">
+            <form
+              onSubmit={handleSubmit}
+              className="search-bar w-full flex justify-center items-center mt-5"
+            >
               <input
-                className="w-[60%] p-3 rounded-2xl text-[1vw]"
+                className="w-3/4 p-3 rounded-full text-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400"
                 onChange={handleChange}
                 value={location}
                 type="text"
                 placeholder="Enter location"
               />
-              <button type="submit" className="ml-2 p-3 bg-blue-500 text-white rounded-2xl">Search</button>
+              <button
+                type="submit"
+                className="ml-3 p-3 bg-blue-500 text-white rounded-full hover:bg-blue-600 transition duration-300"
+              >
+                Search
+              </button>
             </form>
           </div>
         </div>

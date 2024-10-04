@@ -1,4 +1,4 @@
-/* eslint-disable no-unused-vars */
+ /* eslint-disable no-unused-vars */
 import React from "react";
 import { Link } from "react-router-dom";
 import Logo from "../../public/Images/a-sleek-and-sophisticated-logo-for-a-premium-mensw-qcl4YhfuSYylk9FHcq4p1A-EcuimXWNSkC2sfryBg0i1A_cleanup.jpeg";
@@ -13,6 +13,7 @@ function FashinoNavbar() {
   const resetData = () => {
     dispatch(resetGoogleData());
   };
+
   return (
     <>
       <div className="main-navbar-container w-full h-[15vh] flex border-white border-b-[1px] bg-[#FCFCFC]">
