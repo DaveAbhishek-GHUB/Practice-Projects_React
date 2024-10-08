@@ -188,7 +188,6 @@ function FashinoRegister() {
             </Formik>
             <div className="signup-with-google w-full flex justify-center mt-5">
               <div className="inner-wrapper w-full flex flex-col gap-3">
-            <h1 className="m-auto">Signup with google</h1>
             <div className="google-login-wrapper m-auto">
             <GoogleLogin
             onSuccess={(credentialResponse) => {
