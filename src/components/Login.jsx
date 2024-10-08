@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import React from "react";
+import React, { useState } from "react";
 import Navbar from "./Navbar";
 import * as Yup from "yup";
 import { ErrorMessage, Field, Formik, Form, FieldArray } from "formik";
@@ -9,6 +9,8 @@ import { GoogleLogin } from "@react-oauth/google";
 import { useNavigate } from "react-router-dom";
 
 function Login() {
+  const [add, setadd] = useState('');
+  console.log(add)
   const initialvalues = {
     username: "",
     email: "",
@@ -162,8 +164,7 @@ function Login() {
                                     -
                                   </Button>
                                 )}
-                                {index === addresses.length - 1 &&
-                                  addresses.length < 2 && (
+                                {index === addresses.length - 1  && address !== "" && addresses.length < 2 && (
                                     <Button
                                       type="button"
                                       onClick={() => push("")}

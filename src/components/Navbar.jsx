@@ -1,11 +1,35 @@
-/* eslint-disable no-unused-vars */
-import React, { useState } from "react";
+
+import React, { useRef, useState } from "react";
 import Logo from "../../public/boston-public-library-YoK5pBcSY8s-unsplash.jpg";
 import { Link } from "react-router-dom";
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
+  const useClickOutside = (ref) => {
+    const handleClick = (e) => {
+      console.log(ref.current,ref.current.contains(e.target),"1212")
+      if (ref.current 
+        && !ref.current.contains(e.target)
+      ) {
+        setIsOpen(false);
+
+      }
+    };
+    React.useEffect(() => {
+      document.addEventListener('click', handleClick);
+  
+      return () => {
+        document.removeEventListener('click', handleClick);
+      };
+    });
+  };
+
+  const clickRef = useRef();
+  useClickOutside(clickRef)
+
+console.log(isOpen,"1212")
+  
   return (
     <nav className="bg-white shadow-md">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -22,15 +46,15 @@ function Navbar() {
             >
               Home
             </Link>
-            <div className="relative z-10">
+            <div className="relative z-10" ref={clickRef} >
               <button
-                onClick={() => setIsOpen(!isOpen)}
+                onClick={() => setIsOpen(true)}
                 className="px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 focus:outline-none"
               >
                 Other Projects
               </button>
               {isOpen && (
-                <div className="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
+                <div className="abcd origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
                   <Link
                     to="/todo"
                     className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"

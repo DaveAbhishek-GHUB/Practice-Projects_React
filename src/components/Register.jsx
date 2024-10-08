@@ -152,8 +152,6 @@ function FashinoRegister() {
                     name="gender"
                   />
                 </div>
-              
-
                 <div>
                   <label
                     htmlFor="Date"
@@ -173,9 +171,7 @@ function FashinoRegister() {
                     name="dateofbirth"
                   />
                 </div>
-
                 
-
                 <div>
                   <button
                     type="submit"
