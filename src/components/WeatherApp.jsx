@@ -115,9 +115,9 @@ function WeatherApp() {
   return (
     <>
       <Navbar />
-      <div className="main-container w-full h-screen flex justify-center items-center bg-gradient-to-r from-blue-500 to-purple-600">
+      <div className="main-container w-full h-screen flex justify-center items-center  ">
         <div className="inner-weather-wrapper w-11/12 max-w-4xl h-5/6 bg-white shadow-lg rounded-3xl flex overflow-hidden">
-          <div className="weather-icon w-1/2 h-full flex justify-center items-center bg-gradient-to-b from-blue-300 to-blue-500">
+          <div className="weather-icon w-1/2 h-full flex justify-center items-center bg-blue-500">
             {icon && <img className="h-48" src={icon} alt="Weather icon" />}
           </div>
           <div className="weather-info w-1/2 h-full flex flex-col justify-center gap-8 p-8">

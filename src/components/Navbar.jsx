@@ -37,12 +37,7 @@ function Navbar() {
                   >
                     Todo List
                   </Link>
-                  <Link
-                    to="/datatablecomponent"
-                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                  >
-                    Data Table Component
-                  </Link>
+
                   <Link
                     to="/datatablecomponentwithFilter"
                     className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
@@ -54,12 +49,6 @@ function Navbar() {
                     className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                   >
                     Search Webseries
-                  </Link>
-                  <Link
-                    to="/ecommerce"
-                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                  >
-                    e-commerce
                   </Link>
                   <Link
                     to="/weather"

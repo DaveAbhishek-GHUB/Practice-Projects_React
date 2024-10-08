@@ -5,6 +5,8 @@ import * as Yup from "yup";
 import { ErrorMessage, Field, Formik, Form, FieldArray } from "formik";
 import Loginimage from "../../public/mcgill-library-kHuCUkkExbc-unsplash.jpg";
 import { Button } from "react-bootstrap";
+import { GoogleLogin } from "@react-oauth/google";
+import { useNavigate } from "react-router-dom";
 
 function Login() {
   const initialvalues = {
@@ -35,6 +37,7 @@ function Login() {
     }
   };
 
+  const navigate = useNavigate();
   return (
     <>
       <Navbar />
@@ -192,6 +195,22 @@ function Login() {
                 </button>
               </Form>
             </Formik>
+            <div className="signup-with-google w-full flex justify-center mt-5">
+              <div className="inner-wrapper w-full flex flex-col gap-3">
+            <h1 className="m-auto">Signup with google</h1>
+            <div className="google-login-wrapper m-auto">
+            <GoogleLogin
+            onSuccess={(credentialResponse) => {
+                console.log("Users'Data:",credentialResponse);
+                navigate('/');
+            }}
+            onError={() => {
+              console.log("Login Failed");
+            }}
+          />
+            </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

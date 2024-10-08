@@ -54,18 +54,6 @@ function FashinoRegister() {
             <h1 className="text-3xl font-serif font-bold text-gray-800 mb-8">
               Register to join our art gallery
             </h1>
-            <div className="signup-with-google w-full flex justify-between">
-            <h1>SignUp with google</h1>
-            <GoogleLogin
-            onSuccess={(credentialResponse) => {
-                console.log("Users'Data:",credentialResponse);
-                navigate('/');
-            }}
-            onError={() => {
-              console.log("Login Failed");
-            }}
-          />
-            </div>
             <Formik
               initialValues={initialvalues}
               validationSchema={validationSchema}
@@ -198,6 +186,22 @@ function FashinoRegister() {
                 </div>
               </Form>
             </Formik>
+            <div className="signup-with-google w-full flex justify-center mt-5">
+              <div className="inner-wrapper w-full flex flex-col gap-3">
+            <h1 className="m-auto">Signup with google</h1>
+            <div className="google-login-wrapper m-auto">
+            <GoogleLogin
+            onSuccess={(credentialResponse) => {
+                console.log("Users'Data:",credentialResponse);
+                navigate('/');
+            }}
+            onError={() => {
+              console.log("Login Failed");
+            }}
+          />
+            </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

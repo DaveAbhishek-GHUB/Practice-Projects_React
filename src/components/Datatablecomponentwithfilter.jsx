@@ -20,6 +20,10 @@ const Datatablecomponentwithfilter = () => {
       selector: (row) => row.age,
     },
     {
+      name: "Status",
+      selector: (row) => row.status,
+    },
+    {
       name: "Mobile number",
       selector: (row) => row["mobile number"],
     },
@@ -31,6 +35,7 @@ const Datatablecomponentwithfilter = () => {
       username: "John Wick",
       email: "johnwick@gmail.com",
       age: "12",
+      status: "active",
       "mobile number": "35XXXXXXXX",
     },
     {
@@ -38,6 +43,7 @@ const Datatablecomponentwithfilter = () => {
       username: "John Snow",
       email: "johnsnow@gmail.com",
       age: "32",
+      status: "inactive",
       "mobile number": "25XXXXXXXX",
     },
     {
@@ -45,6 +51,7 @@ const Datatablecomponentwithfilter = () => {
       username: "jemmylenister",
       email: "jemmylenister@gmail.com",
       age: "43",
+      status: "active",
       "mobile number": "40XXXXXXXX",
     },
     {
@@ -52,6 +59,7 @@ const Datatablecomponentwithfilter = () => {
       username: "Arya Stark",
       email: "aryastark@gmail.com",
       age: "14",
+      status: "inactive",
       "mobile number": "18XXXXXXXX",
     },
     {
@@ -59,6 +67,7 @@ const Datatablecomponentwithfilter = () => {
       username: "Daenerys Targaryen",
       email: "motherofdragons@gmail.com",
       age: "87",
+      status: "active",
       "mobile number": "22XXXXXXXX",
     },
     {
@@ -66,6 +75,7 @@ const Datatablecomponentwithfilter = () => {
       username: "Tyrion Lannister",
       email: "tyrionlannister@gmail.com",
       age: "21",
+      status: "inactive",
       "mobile number": "38XXXXXXXX",
     },
     {
@@ -73,6 +83,7 @@ const Datatablecomponentwithfilter = () => {
       username: "Sherlock Holmes",
       email: "sherlockholmes@gmail.com",
       age: "14",
+      status: "active",
       "mobile number": "40XXXXXXXX",
     },
     {
@@ -80,6 +91,7 @@ const Datatablecomponentwithfilter = () => {
       username: "Tony Stark",
       email: "ironman@stark.com",
       age: "54",
+      status: "inactive",
       "mobile number": "45XXXXXXXX",
     },
     {
@@ -87,6 +99,7 @@ const Datatablecomponentwithfilter = () => {
       username: "Bruce Wayne",
       email: "batman@wayneenterprises.com",
       age: "87",
+      status: "active",
       "mobile number": "40XXXXXXXX",
     },
     {
@@ -94,6 +107,7 @@ const Datatablecomponentwithfilter = () => {
       username: "Peter Parker",
       email: "spiderman@dailybugle.com",
       age: "92",
+      status: "inactive",
       "mobile number": "23XXXXXXXX",
     },
     {
@@ -101,6 +115,7 @@ const Datatablecomponentwithfilter = () => {
       username: "Hermione Granger",
       email: "hermione@hogwarts.edu",
       age: "45",
+      status: "active",
       "mobile number": "20XXXXXXXX",
     },
     {
@@ -108,6 +123,7 @@ const Datatablecomponentwithfilter = () => {
       username: "Luke Skywalker",
       email: "luke@jediorder.com",
       age: "54",
+      status: "inactive",
       "mobile number": "30XXXXXXXX",
     },
     {
@@ -115,6 +131,7 @@ const Datatablecomponentwithfilter = () => {
       username: "Leia Organa",
       email: "leia@resistance.org",
       age: "23",
+      status: "active",
       "mobile number": "30XXXXXXXX",
     },
     {
@@ -122,6 +139,7 @@ const Datatablecomponentwithfilter = () => {
       username: "Katniss Everdeen",
       email: "mockingjay@district12.com",
       age: "54",
+      status: "inactive",
       "mobile number": "17XXXXXXXX",
     },
     {
@@ -129,6 +147,7 @@ const Datatablecomponentwithfilter = () => {
       username: "Harry Potter",
       email: "chosen_one@hogwarts.edu",
       age: "12",
+      status: "active",
       "mobile number": "18XXXXXXXX",
     },
     {
@@ -136,6 +155,7 @@ const Datatablecomponentwithfilter = () => {
       username: "Frodo Baggins",
       email: "ringbearer@shire.me",
       age: "32",
+      status: "inactive",
       "mobile number": "33XXXXXXXX",
     },
     {
@@ -143,6 +163,7 @@ const Datatablecomponentwithfilter = () => {
       username: "Ellen Ripley",
       email: "alienslayer@weyland.com",
       age: "34",
+      status: "active",
       "mobile number": "30XXXXXXXX",
     },
     {
@@ -150,6 +171,7 @@ const Datatablecomponentwithfilter = () => {
       username: "James Bond",
       email: "007@mi6.gov.uk",
       age: "43",
+      status: "inactive",
       "mobile number": "42XXXXXXXX",
     },
     {
@@ -157,6 +179,7 @@ const Datatablecomponentwithfilter = () => {
       username: "Wonder Woman",
       email: "diana@themyscira.com",
       age: "23",
+      status: "active",
       "mobile number": "80XXXXXXXX",
     },
     {
@@ -164,6 +187,7 @@ const Datatablecomponentwithfilter = () => {
       username: "Neo",
       email: "theone@matrix.net",
       age: "22",
+      status: "inactive",
       "mobile number": "28XXXXXXXX",
     },
     {
@@ -171,6 +195,7 @@ const Datatablecomponentwithfilter = () => {
       username: "Captain America",
       email: "cap@avengers.com",
       age: "32",
+      status: "active",
       "mobile number": "45XXXXXXXX",
     },
     {
@@ -178,6 +203,7 @@ const Datatablecomponentwithfilter = () => {
       username: "Thor Odinson",
       email: "thor@asgardian.com",
       age: "12",
+      status: "inactive",
       "mobile number": "50XXXXXXXX",
     },
     {
@@ -185,6 +211,7 @@ const Datatablecomponentwithfilter = () => {
       username: "Clark Kent",
       email: "superman@dailyplanet.com",
       age: "32",
+      status: "active",
       "mobile number": "40XXXXXXXX",
     },
     {
@@ -192,6 +219,7 @@ const Datatablecomponentwithfilter = () => {
       username: "Darth Vader",
       email: "darkside@empire.com",
       age: "54",
+      status: "inactive",
       "mobile number": "55XXXXXXXX",
     },
     {
@@ -199,6 +227,7 @@ const Datatablecomponentwithfilter = () => {
       username: "Indiana Jones",
       email: "indiana@archaeology.com",
       age: "34",
+      status: "active",
       "mobile number": "38XXXXXXXX",
     },
     {
@@ -206,6 +235,7 @@ const Datatablecomponentwithfilter = () => {
       username: "Wolverine",
       email: "logan@xmen.com",
       age: "54",
+      status: "inactive",
       "mobile number": "39XXXXXXXX",
     },
     {
@@ -213,6 +243,7 @@ const Datatablecomponentwithfilter = () => {
       username: "Lara Croft",
       email: "lara@tombraider.com",
       age: "12",
+      status: "active",
       "mobile number": "29XXXXXXXX",
     },
     {
@@ -220,6 +251,7 @@ const Datatablecomponentwithfilter = () => {
       username: "Gandalf",
       email: "gandalf@middleearth.com",
       age: "43",
+      status: "inactive",
       "mobile number": "60XXXXXXXX",
     },
     {
@@ -227,6 +259,7 @@ const Datatablecomponentwithfilter = () => {
       username: "Optimus Prime",
       email: "optimus@autobots.com",
       age: "12",
+      status: "inactive",
       "mobile number": "70XXXXXXXX",
     },
     {
@@ -234,6 +267,7 @@ const Datatablecomponentwithfilter = () => {
       username: "Black Widow",
       email: "natasha@avengers.com",
       age: "21",
+      status: "active",
       "mobile number": "35XXXXXXXX",
     },
     {
@@ -241,6 +275,7 @@ const Datatablecomponentwithfilter = () => {
       username: "Deadpool",
       email: "wade@mercwithamouth.com",
       age: "32",
+      status: "inactive",
       "mobile number": "33XXXXXXXX",
     },
     {
@@ -248,6 +283,7 @@ const Datatablecomponentwithfilter = () => {
       username: "Samus Aran",
       email: "samus@galactichunter.com",
       age: "16",
+      status: "active",
       "mobile number": "37XXXXXXXX",
     },
     {
@@ -255,6 +291,7 @@ const Datatablecomponentwithfilter = () => {
       username: "Doctor Strange",
       email: "strange@sorcerersupreme.com",
       age: "23",
+      status: "inactive",
       "mobile number": "44XXXXXXXX",
     },
     {
@@ -262,6 +299,7 @@ const Datatablecomponentwithfilter = () => {
       username: "Yoda",
       email: "yoda@jediorder.com",
       age: "27",
+      status: "active",
       "mobile number": "90XXXXXXXX",
     },
     {
@@ -269,6 +307,7 @@ const Datatablecomponentwithfilter = () => {
       username: "Jack Sparrow",
       email: "captainjack@blackpearl.com",
       age: "25",
+      status: "inactive",
       "mobile number": "34XXXXXXXX",
     },
     {
@@ -276,6 +315,7 @@ const Datatablecomponentwithfilter = () => {
       username: "Buzz Lightyear",
       email: "buzz@starcommand.com",
       age: "29",
+      status: "active",
       "mobile number": "22XXXXXXXX",
     },
     {
@@ -283,6 +323,7 @@ const Datatablecomponentwithfilter = () => {
       username: "Rick Sanchez",
       email: "rick@dimensionc137.com",
       age: "25",
+      status: "inactive",
       "mobile number": "65XXXXXXXX",
     },
     {
@@ -290,6 +331,7 @@ const Datatablecomponentwithfilter = () => {
       username: "Marty McFly",
       email: "marty@backtothefuture.com",
       age: "21",
+      status: "active",
       "mobile number": "30XXXXXXXX",
     },
     {
@@ -297,6 +339,7 @@ const Datatablecomponentwithfilter = () => {
       username: "John McClane",
       email: "john@nakatomi.com",
       age: "31",
+      status: "inactive",
       "mobile number": "55XXXXXXXX",
     },
     {
@@ -304,20 +347,22 @@ const Datatablecomponentwithfilter = () => {
       username: "Groot",
       email: "groot@guardians.com",
       age: "32",
+      status: "active",
       "mobile number": "80XXXXXXXX",
     },
   ];
 
   const [filterText, setFilterText] = useState("");
+  const [statusFilter, setStatusFilter] = useState("all");
   const [resetPaginationToggle, setResetPaginationToggle] = useState(false);
   const [itemOffset, setItemOffset] = useState(0);
   const itemsPerPage = 10;
 
-  const filteredItems = data.filter(
-    (item) =>
-      item.username &&
-      item.username.toLowerCase().includes(filterText.toLowerCase())
-  );
+  const filteredItems = data.filter((item) => {
+    const matchesUsername = item.username.toLowerCase().includes(filterText.toLowerCase());
+    const matchesStatus = statusFilter === "all" || item.status === statusFilter;
+    return matchesUsername && matchesStatus;
+  });
 
   const endOffset = itemOffset + itemsPerPage;
   const currentItems = filteredItems.slice(itemOffset, endOffset);
@@ -330,8 +375,11 @@ const Datatablecomponentwithfilter = () => {
 
   const subHeaderComponentMemo = useMemo(() => {
     const handleClear = () => {
-      if (filterText) setResetPaginationToggle(!resetPaginationToggle);
+      if (filterText || statusFilter !== "all") {
+        setResetPaginationToggle(!resetPaginationToggle);
+      }
       setFilterText("");
+      setStatusFilter("all");
     };
 
     return (
@@ -343,6 +391,15 @@ const Datatablecomponentwithfilter = () => {
           onChange={(e) => setFilterText(e.target.value)}
           className="px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
         />
+        <select
+          value={statusFilter}
+          onChange={(e) => setStatusFilter(e.target.value)}
+          className="px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+        >
+          <option value="all">All</option>
+          <option value="active">Active</option>
+          <option value="inactive">Inactive</option>
+        </select>
         <button
           onClick={handleClear}
           className="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50"
@@ -351,16 +408,17 @@ const Datatablecomponentwithfilter = () => {
         </button>
       </div>
     );
-  }, [filterText, resetPaginationToggle]);
+  }, [filterText, statusFilter, resetPaginationToggle]);
 
   useEffect(() => {
     setItemOffset(0);
-  }, [filterText]);
+  }, [filterText, statusFilter]);
 
   return (
     <>
       <Navbar />
-      <div className="main-container w-full h-screen">
+      <div className="main-container w-full h-screen flex flex-col p-10">
+        <div className="table-wrapper w-[90vw] m-auto border-2 rounded-2xl p-2">
         <DataTable
           columns={columns}
           data={currentItems}
@@ -368,6 +426,7 @@ const Datatablecomponentwithfilter = () => {
           subHeaderComponent={subHeaderComponentMemo}
           resetPaginationToggle={resetPaginationToggle}
         />
+        </div>
         <ReactPaginate
           breakLabel="..."
           nextLabel="Next"
@@ -375,12 +434,18 @@ const Datatablecomponentwithfilter = () => {
           pageCount={pageCount}
           previousLabel="Previous"
           containerClassName="pagination flex justify-center mt-4 space-x-2"
-          pageClassName="Navigator"
-          activeClassName="bg-blue-700"
-          previousClassName="px-3 py-2 bg-gray-200 text-gray-800 rounded-md hover:bg-gray-300"
-          nextClassName="px-3 py-2 bg-gray-200 text-gray-800 rounded-md hover:bg-gray-300"
+          pageClassName="page-item"
+          pageLinkClassName="page-link px-4 py-2 rounded-md text-gray-700 hover:bg-gray-100 hover:text-black transition-colors duration-200"
+          activeClassName="active"
+          activeLinkClassName="bg-blue-600 text-white"
+          previousClassName="page-item"
+          previousLinkClassName="page-link px-4 py-2 border border-gray-300 rounded-md text-gray-700 hover:bg-gray-100 transition-colors duration-200"
+          nextClassName="page-item"
+          nextLinkClassName="page-link px-4 py-2 border border-gray-300 rounded-md text-gray-700 hover:bg-gray-100 transition-colors duration-200"
           disabledClassName="opacity-50 cursor-not-allowed"
-        />
+          disabledLinkClassName="page-link px-4 py-2 border border-gray-300 rounded-md text-gray-400"
+/>
+
       </div>
     </>
   );
